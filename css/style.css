@@ -17,6 +17,7 @@ html{
 body{
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: regular;
+    cursor: default;
 }
 
 ul{
