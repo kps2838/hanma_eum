@@ -277,6 +277,14 @@ section > .title .title-deco{
     align-items: center;
     z-index: 5;
     text-align: center;
+    opacity: 0;
+    transition: all 1s;
+    transform: translateY(100px);
+}
+
+#about .about > div[class^=content].on{
+    transform: translateY(0);
+    opacity: 1;
 }
 
 #about .about > div[class^=content] .title{
@@ -396,22 +404,57 @@ section > .title .title-deco{
     animation-iteration-count: infinite;
 }
 
+#about .volunteer .img_box img{
+    width: 219px;
+}
+
+@keyframes volunteer_img {
+    from{
+        transform: translateY(-20px);
+    }
+
+    to{
+        transform: translateY(0px);
+    }
+    
+}
+
 #about .volunteer .img_box img:first-child{
     position: absolute;
     bottom: 200px;
     right: 478px;
+    animation-name: volunteer_img;
+    animation-duration: 1.5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-delay: -0.9s;
+    animation-timing-function: ease-in-out;
+
 }
 
 #about .volunteer .img_box img:nth-child(2){
     position: absolute;
     bottom: 23px;
     right: 200px;
+    animation-name: volunteer_img;
+    animation-duration: 1.5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-delay: -0.6s;
+    animation-timing-function: ease-in-out;
+
 }
 
 #about .volunteer .img_box img:last-child{
     position: absolute;
     bottom: 302px;
     right: 37px;
+    animation-name: volunteer_img;
+    animation-duration: 1.5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-delay: -0.3s;
+    animation-timing-function: ease-in-out;
 }
 
 
@@ -479,6 +522,15 @@ section > .title .title-deco{
     position: absolute;
     top: 32px;
     right: 22px;
+}
+
+#notice .container .contents-box div[class^=text-box] img{
+    transition: all 0.5s;
+}
+
+#notice .container .contents-box div[class^=text-box]:hover img{
+    width: 28px;
+    transform: rotate(90deg);
 }
 
 #notice .container .contents-box div[class^=text-box] p{

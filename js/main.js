@@ -1,8 +1,6 @@
 $(function(){
 
-
-    // 슬라이드
-
+    // 센터 아이들 슬라이드
 
     let slideNum = 0;
     let position = 0;
@@ -39,7 +37,6 @@ $(function(){
     });
 
 
-
     // 슬라이드 페이지네이션
 
     $('#center .slide-btn > div').eq(0).click(function(){
@@ -63,11 +60,34 @@ $(function(){
 
 
     // 센터 아이들 hover
-
-
     $('#center .slide .images > div[class^=center]').hover(function(){
         $(this).find('.hover-box').addClass('on');
     }, function(){
         $(this).find('.hover-box').removeClass('on');
-    })
-})
+    });
+
+
+
+
+    // about 스크롤 애니메이션
+      
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('on');
+          } else {
+            entry.target.classList.remove('on');
+          }
+        });
+      },{
+        threshold : 0.5,
+      });
+      
+      const boxList = document.querySelectorAll('#about .about > div[class^=content]');
+      
+      boxList.forEach(el => observer.observe(el));
+
+});
+
+
+
