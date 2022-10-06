@@ -69,7 +69,7 @@ $(function(){
 
 
 
-    // about 스크롤 애니메이션
+    // 스크롤 애니메이션
       
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -83,9 +83,26 @@ $(function(){
         threshold : 0.5,
       });
       
-      const boxList = document.querySelectorAll('#about .about > div[class^=content]');
-      
-      boxList.forEach(el => observer.observe(el));
+      const about_images = document.querySelectorAll('#about .about > div[class^=content]');
+      about_images.forEach(el => observer.observe(el));
+
+      const title = document.querySelectorAll('section .title');
+      title.forEach(el => observer.observe(el));
+
+      const notice = document.querySelectorAll('#notice .container .contents-box > div');
+      notice.forEach(el => observer.observe(el));
+
+      const title_box = document.querySelectorAll('#center .title_box');
+      title_box.forEach(el => observer.observe(el));
+
+      const center = document.querySelectorAll('#center .slide .slide-container .images > div[class^=center]');
+      center.forEach(el => observer.observe(el));
+
+      const adoption = document.querySelectorAll('#center .adoption .contents-box .contents-wrap');
+      adoption.forEach(el => observer.observe(el));
+
+      const donation_text = document.querySelectorAll('#donation .content01 .text p');
+      donation_text.forEach(el => observer.observe(el));
 
 });
 

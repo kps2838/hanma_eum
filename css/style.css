@@ -243,6 +243,17 @@ section > .title{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    opacity: 0;
+    transition: all 1s;
+    transition-duration: 2s;
+}
+
+section > .title.on{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 1;
 }
 
 section > .title h3{
@@ -282,9 +293,23 @@ section > .title .title-deco{
     transform: translateY(100px);
 }
 
-#about .about > div[class^=content].on{
+#about .about > div[class^=content]:first-child.on{
     transform: translateY(0);
     opacity: 1;
+    transition-delay: 0.3s;
+
+}
+
+#about .about > div[class^=content]:nth-child(2).on{
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.6s;
+}
+
+#about .about > div[class^=content]:nth-child(3).on{
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.9s;
 }
 
 #about .about > div[class^=content] .title{
@@ -304,9 +329,37 @@ section > .title .title-deco{
     font-weight: 400;
 }
 
-#about .about div[class^=content] img{
+#about .about div[class^=content] .img{
     width: 275px;
+    height: 275px;
+    border-radius: 50%;
     margin-bottom: 15px;
+    background-image: url(../images/about01.jpg);
+    background-position: center;
+}
+
+#about .about div[class^=content]:nth-child(2) .img{
+    background-image: url(../images/about02.jpg);
+}
+
+#about .about div[class^=content]:nth-child(3) .img{
+    background-image: url(../images/about03.jpg);
+
+}
+
+#about .about div[class^=content] .img:hover{
+    animation-name: about_img;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes about_img {
+    from{
+        background-size: 100%;
+    }
+    to{
+        background-size: 110%;
+    }
 }
 
 #about .about div[class^=content] p{
@@ -503,6 +556,28 @@ section > .title .title-deco{
     border: 3px solid #F4F4F4;
     padding: 32px 22px;
     position: relative;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: all 1s;
+}
+
+#notice .container .contents-box div[class^=text-box]:first-child.on{
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+
+}
+
+#notice .container .contents-box div[class^=text-box]:nth-child(2).on{
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.6s;
+}
+
+#notice .container .contents-box div[class^=text-box]:last-child.on{
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.9s;
 }
 
 #notice .container .contents-box div[class^=text-box]:hover{
@@ -592,6 +667,20 @@ section > .title .title-deco{
     justify-content: center;
     text-align: center;
     margin-right: 30px;
+    transform: translateX(-20px);
+    transition: all 0.7s;
+    opacity: 0;
+}
+
+#center .adoption .title_box{
+    transform: translateX(20px);
+    transition: all 0.7s;
+    opacity: 0;
+}
+
+#center .title_box.on{
+    transform: translateX(0);
+    opacity: 1;
 }
 
 #center .title_box h3{
@@ -647,9 +736,21 @@ section > .title .title-deco{
     transition: all 0.7s;
 }
 
-#center .slide .slide-container .images > div[class^=center]{
+#center .slide .slide-container .images > div[class^=center] {
     position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s;
+    transition-delay: 1;
+
 }
+
+#center .slide .slide-container .images > div[class^=center].on{
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+}
+
 
 #center .slide .slide-container > .images > div[class^=center] .hover-box{
     width: 277px;
@@ -746,16 +847,30 @@ section > .title .title-deco{
 #center .adoption{
     margin-top: 356px;
     height: 328px;
-
 }
 
-
-#center .adoption .contents-box{
+#center .adoption .contents-box {
     display: flex;
     align-items: center;
 }
 
-#center .adoption .contents-box div[class^=content]{
+#center .adoption .contents-box .contents-wrap{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s;
+    transition-delay: 1;
+}
+
+#center .adoption .contents-box .contents-wrap.on{
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+}
+
+#center .adoption .contents-box .contents-wrap > div {
     width: 278px;
     height: 250px;
     padding: 15px 19px;
@@ -831,6 +946,24 @@ section > .title .title-deco{
     text-align: right;
 }
 
+#donation .content01 .text p{
+    transform: translateX(20px);
+    opacity: 0;
+}
+
+#donation .content01 .text p:first-child.on{
+    transform: translateX(0);
+    opacity: 1;
+    transition: all 1.5s;
+}
+
+#donation .content01 .text p:last-child.on{
+    transform: translateX(0);
+    opacity: 1;
+    transition: all 1.5s;
+    transition-delay: 0.5s;
+}
+
 #donation .content01 .text p:first-child{
     font-size: 48px;
     font-weight: 800;
@@ -860,6 +993,11 @@ section > .title .title-deco{
     transform: translateY(-50%);
     left: 92px;
     padding: 17px 37px;
+}
+
+#donation .content01 .text.on{
+    transform: translateX(0);
+    opacity: 1;
 }
 
 #donation .content02 .info-box h3{
