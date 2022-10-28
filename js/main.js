@@ -83,8 +83,8 @@ $(function(){
         threshold : 0.5,
       });
       
-      const about_images = document.querySelectorAll('#about .about > div[class^=content]');
-      about_images.forEach(el => observer.observe(el));
+      const about = document.querySelectorAll('#about div');
+      about.forEach(el => observer.observe(el));
 
       const title = document.querySelectorAll('section .title');
       title.forEach(el => observer.observe(el));

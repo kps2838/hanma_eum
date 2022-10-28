@@ -382,6 +382,7 @@ section > .title .title-deco{
     width: 1200px;
     height: 724px;
     position: relative;
+
 }
 
 
@@ -405,12 +406,26 @@ section > .title .title-deco{
     bottom: -465px;
 }
 
+#about .volunteer_wrap{
+    width: 100%;
+    height: 100%;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 1s;
+}
+
+#about .volunteer_wrap.on{
+    transform: translateY(0);
+    opacity: 1;
+}
+
 #about .volunteer .title{
     z-index: 10;
     position: absolute;
     bottom: 150px;
     left: 37px;
 }
+
 
 #about .volunteer .title p:first-child{
     font-size: 32px;
@@ -457,57 +472,109 @@ section > .title .title-deco{
     animation-iteration-count: infinite;
 }
 
-#about .volunteer .img_box img{
+
+#about .volunteer .img_box div{
+    background-size: cover;
+    background-position: center;
     width: 219px;
+    height: 219px;    
+    animation-duration: 10s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
 }
 
-@keyframes volunteer_img {
-    from{
-        transform: translateY(-20px);
+
+#about .volunteer .img_box div:first-child{
+    position: absolute;
+    bottom: 200px;
+    right: 478px;
+    animation-name: volunteer_img01;
+    background-image: url(../images/volunteer01.jpg);
+}
+
+@keyframes volunteer_img01 {
+    0%{
+        background-image: url(../images/volunteer01.jpg);
     }
 
-    to{
-        transform: translateY(0px);
+    25%{
+        background-image: url(../images/volunteer01.jpg);
+    }
+
+    50%{
+        background-image: url(../images/volunteer04.png);
+    }
+
+    75%{
+        background-image: url(../images/volunteer04.png);
+    }
+
+    100%{
+        background-image: url(../images/volunteer01.jpg);
     }
     
 }
 
-#about .volunteer .img_box img:first-child{
-    position: absolute;
-    bottom: 200px;
-    right: 478px;
-    animation-name: volunteer_img;
-    animation-duration: 1.5s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-    animation-delay: -0.9s;
-    animation-timing-function: ease-in-out;
-
-}
-
-#about .volunteer .img_box img:nth-child(2){
+#about .volunteer .img_box div:nth-child(2){
     position: absolute;
     bottom: 23px;
     right: 200px;
-    animation-name: volunteer_img;
-    animation-duration: 1.5s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-    animation-delay: -0.6s;
-    animation-timing-function: ease-in-out;
-
+    animation-name: volunteer_img02;
+    background-image: url(../images/volunteer02.jpg);
 }
 
-#about .volunteer .img_box img:last-child{
+@keyframes volunteer_img02 {
+    0%{
+        background-image: url(../images/volunteer02.jpg);
+    }
+
+    25%{
+        background-image: url(../images/volunteer02.jpg);
+    }
+
+    50%{
+        background-image: url(../images/volunteer05.png);
+    }
+
+    75%{
+        background-image: url(../images/volunteer05.png);
+    }
+
+    100%{
+        background-image: url(../images/volunteer02.jpg);
+    }
+    
+}
+
+#about .volunteer .img_box div:last-child{
     position: absolute;
     bottom: 302px;
     right: 37px;
-    animation-name: volunteer_img;
-    animation-duration: 1.5s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-    animation-delay: -0.3s;
-    animation-timing-function: ease-in-out;
+    animation-name: volunteer_img03;
+    background-image: url(../images/volunteer03.jpg);
+}
+
+@keyframes volunteer_img03 {
+    0%{
+        background-image: url(../images/volunteer03.jpg);
+    }
+
+    25%{
+        background-image: url(../images/volunteer03.jpg);
+    }
+
+    50%{
+        background-image: url(../images/volunteer06.png);
+    }
+
+    75%{
+        background-image: url(../images/volunteer06.png);
+    }
+
+    100%{
+        background-image: url(../images/volunteer03.jpg);
+    }
+    
 }
 
 
@@ -565,7 +632,6 @@ section > .title .title-deco{
     opacity: 1;
     transform: translateY(0);
     transition-delay: 0.3s;
-
 }
 
 #notice .container .contents-box div[class^=text-box]:nth-child(2).on{
@@ -583,6 +649,12 @@ section > .title .title-deco{
 #notice .container .contents-box div[class^=text-box]:hover{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
+
+#notice .container .contents-box div[class^=text-box]:hover h4{
+    font-size: 22px;
+    transition: all 0.5s;
+}
+
 
 #notice .container .contents-box div[class^=text-box] h4{
     font-size: 20px;
