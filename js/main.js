@@ -101,8 +101,6 @@ $(function(){
       const adoption = document.querySelectorAll('#center .adoption .contents-box .contents-wrap');
       adoption.forEach(el => observer.observe(el));
 
-      const donation_text = document.querySelectorAll('#donation .content01 .text p');
-      donation_text.forEach(el => observer.observe(el));
 
 });
 
